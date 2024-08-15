@@ -23,14 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-
+        <Navbar/>
         <ClientLayout>
           {children}
         </ClientLayout>
-        <Footer>
-        <p>&copy; 2024 Market, Inc.</p>
-        <p>Todos los derechos reservados.</p>
-      </Footer>
       </body>
     </html>
   );

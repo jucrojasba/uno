@@ -80,6 +80,13 @@ const NavItem = styled.li`
   
 `;
 
+const StyledLink =styled(Link)`
+  text-decoration:none;
+  color: #454545;
+
+  &:hover{color: white}
+`
+
 export const Navbar = () => {
   return (
     <NavbarContainer>
@@ -88,13 +95,13 @@ export const Navbar = () => {
       </LogoContainer>
       <NavList>
         <NavItem>
-          <Link href="/">Inicio</Link>
+          <StyledLink href="/">Inicio</StyledLink>
         </NavItem>
         <NavItem>
-          <Link href="/products">Productos</Link>
+          <StyledLink href="/products">Productos</StyledLink>
         </NavItem>
         <NavItem>
-          <Link href="/create-product">Crear</Link>
+          <StyledLink href="/create-product">Crear</StyledLink>
         </NavItem>
       </NavList>
       <SearchBox>

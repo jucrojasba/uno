@@ -1,4 +1,5 @@
-'use client'
+// ClientLayout.tsx
+'use client';
 import React from "react";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 
@@ -16,13 +17,19 @@ const GlobalTheme = {
 
 // Global styling for essential HTML elements
 const GlobalStyle = createGlobalStyle`
-    body {
+    body, html {
         background: linear-gradient(0deg, ${GlobalTheme.colors.bgPrimary} 70%, ${GlobalTheme.colors.bgSecondary} 100%);
         color: ${GlobalTheme.colors.textTertiary};
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        height: 100vh;
+        height: 100%;
+    }
+
+    #__next {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -42,24 +49,33 @@ const GlobalStyle = createGlobalStyle`
         padding-left: 20px;
         margin-bottom: 20px;
     }
+
 `;
+
 export const Footer = styled.footer`
-    background-color: #60606033;
+    background-color: ${GlobalTheme.colors.widgetsQuaternary};
     margin-left: 50px;
     margin-right: 50px;
     text-align: center;
-    position: absolute;
+    position: relative;
     bottom: 0;
-    left: 0;
-    right: 0;
+    width: calc(100% - 100px);
+    padding: 20px 0;
+    margin-top: 200px;
 `;
 
 const ClientLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return (
-    <ThemeProvider theme={GlobalTheme}>
-        <GlobalStyle />
-        {children}
-    </ThemeProvider>
+        <ThemeProvider theme={GlobalTheme}>
+            <GlobalStyle />
+            <div>
+                {children}
+                <Footer>
+                <p>&copy; 2024 Market, Inc.</p>
+                <p>Todos los derechos reservados.</p>
+                </Footer>
+            </div>
+        </ThemeProvider>
     );
 };
 

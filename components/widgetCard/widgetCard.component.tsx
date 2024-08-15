@@ -38,17 +38,12 @@ const WidgetBody = styled.div`
   border-radius: 5px;
 `
 
-const Image = styled.img`
-  width: 100%;
-  height: auto;
-`
 
 export default function WidgetCardComponent() {
     return (
         <Section>
             <WidgetCard>
-            <Image src="../../public/img/ken.png" alt="" width={100} 
-height={100} />
+            
                 <WidgetBody>
                     <BrandName>MATTEL</BrandName>
                     <Text>Acompañamos en los mejores momentos de su niñez.</Text>
@@ -56,8 +51,6 @@ height={100} />
                 </WidgetBody>
             </WidgetCard>
             <WidgetCard>
-            <Image src="../../public/img/ken.png" alt="" width={100} 
-height={100} />
                 <WidgetBody>
                     <BrandName>LEGO</BrandName>
                     <Text>Acompañamos en los mejores momentos de su niñez.</Text>
@@ -65,7 +58,6 @@ height={100} />
                 </WidgetBody>
             </WidgetCard>
             <WidgetCard>
-                <Image src="../../public/img/ken.png" alt="" width={100} height={100} />
                 <WidgetBody>
                     <BrandName>Mi Alegria</BrandName>
                     <Text>Acompañamos en los mejores momentos de su niñez.</Text>
