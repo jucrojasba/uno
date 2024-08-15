@@ -70,20 +70,26 @@ export default function TableComponent() {
           </Tr>
         </Thead>
         <Tbody>
-          {products.map((product: Product) => {
-            return (
-              <Tr key={product.id}>
-                <Td>{product.id}</Td>
-                <Td>{product.title}</Td>
-                <Td>{product.price}</Td>
-                <Td>{product.description}</Td>
-                <Td>
-                  <Image src={product.image} alt={product.title} width={100} height={100} />
-                </Td>
-              </Tr>
-            );
-          })}
-        </Tbody>
+    {products.length > 0 ? (
+    products.map((product: Product) => {
+      return (
+        <Tr key={product.id}>
+          <Td>{product.id}</Td>
+          <Td>{product.title}</Td>
+          <Td>{product.price}</Td>
+          <Td>{product.description}</Td>
+          <Td>
+            <Image src={product.image} alt={product.title} width={100} height={100} />
+          </Td>
+        </Tr>
+      );
+    })
+  ) : (
+    <Tr>
+      <Td colSpan={5}>No hay productos disponibles</Td>
+    </Tr>
+  )}
+  </Tbody>
       </Table>
     </Main>
   );
