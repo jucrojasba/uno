@@ -1,9 +1,11 @@
 'use client'
-import React from "react"
-import Input from "@/components/input/input.component"
-import Textarea from "@/components/textarea/textarea.component"
-import Button from "@/components/button/button.component"
+import React, { useState } from "react"
+import Input from "@/components/form/input/input.component"
+import Textarea from "@/components/form/textarea/textarea.component"
+import Button from "@/components/form/button/button.component"
 import styled from "styled-components"
+import { setProduct } from "@/utilities/set-product.utility"
+import { Product } from "@/models/product.model"
 
 const Container = styled.div`
     max-width: 600px;
@@ -33,18 +35,64 @@ const Container = styled.div`
 `
 
 function Form() {
+    const newProduct: Product = {
+        id: Date.now(), 
+        title: '',
+        description: '',
+        price: 0,
+        image: '',
+    };
+
+    const [product, setProductState] = useState(newProduct);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { id, value } = e.target;
+        setProductState({...product, [id]: value});
+    }
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        setProduct(product);
+
+        setProductState(newProduct);
+    };
+
     return (
         <Container>
             <h2>Crear Producto</h2>
-            <form>
-                <Input type="text" placeholder="Título" id="title" />
-                <Textarea placeholder="Descripción" id="description" />
-                <Input type="number" placeholder="Precio" id="price" />
-                <Input type="url" placeholder="URL Imagen" id="image" />
+            <form onSubmit={handleSubmit}>
+                <Input
+                    type="text"
+                    placeholder="Título"
+                    id="title"
+                    value={product.title}
+                    onChange={handleChange}
+                />
+                <Textarea
+                    placeholder="Descripción"
+                    id="description"
+                    value={product.description}
+                    onChange={handleChange}
+                />
+                <Input
+                    type="number"
+                    placeholder="Precio"
+                    id="price"
+                    value={String(product.price)}
+                    onChange={handleChange}
+                />
+                <Input
+                    type="url"
+                    placeholder="URL Imagen"
+                    id="image"
+                    value={product.image}
+                    onChange={handleChange}
+                />
                 <Button type="submit" label="Guardar" />
             </form>
         </Container>
     )
 }
 
-export default Form
+export default Form;
