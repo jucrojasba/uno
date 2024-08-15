@@ -19,19 +19,20 @@ const Table = styled.table`
   text-align: center;
   width: 80%;
   border-collapse: separate;
-  border-spacing: 0; 
+  border-spacing: 0;
   border-radius: 10px;
   overflow: hidden;
 `;
 
 const Thead = styled.thead`
-  background-color: #000;
+  background-color: #454545;
   font-size: 22px;
 `;
 
 const Tbody = styled.tbody``;
 
 const Tr = styled.tr`
+border: 1px solid #454545;
 `;
 
 const Th = styled.th`

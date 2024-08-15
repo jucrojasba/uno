@@ -12,26 +12,27 @@ const FormContainer = styled.form`
     display: flex;
     flex-direction: column;
     gap: 10px;
-        
+    
     button {
         width: 100%;
         padding: 10px;
-        background-color: #333;
+        background-color: #454545;
         color: #fff;
         border: none;
-        border-radius: 8px;
+        border-radius: 10px;
         cursor: pointer;
+        font-weight: bold;
     }
 
     button:hover {
-        opacity: .7;
+        opacity: .8;
         cursor: pointer;
         transition: background-color 0.3s ease-in-out;
     }
 
     input{
         padding: 10px;
-        border-radius: 8px;
+        border-radius: 10px;
     }
 
     textarea {
@@ -40,16 +41,16 @@ const FormContainer = styled.form`
         padding: 10px;
         border-radius: 8px;
     }
-    
+   
     input:focus, textarea:focus, button:focus {
         outline: none;
-        border-color: black;
+        border-color: #454545;
     }
     `
 
 function Form() {
     const newProduct: Product = {
-        id: Date.now(), 
+        id: Date.now(),
         title: '',
         description: '',
         price: 0,
@@ -79,7 +80,8 @@ function Form() {
             title: 'Producto Guardado',
             text: 'El producto se ha guardado correctamente.',
             icon:'success',
-            confirmButtonText: 'Aceptar'
+            confirmButtonText: 'Aceptar',
+            didClose: () => {   window.location.href='/products'; }
         })
 
         setProductState(newProduct);

@@ -5,8 +5,7 @@ import Link from 'next/link';
 import search_icon_light from '../navbar/assets/search-w.png'
 import toggle from '../navbar/assets/night.png'
 import Image from 'next/image';
-import { Kaushan_Script } from 'next/font/google'; 
-
+import { Kaushan_Script } from 'next/font/google';
 
 
 const kaushan = Kaushan_Script({
@@ -26,8 +25,7 @@ const NavbarContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background:#e2c99f;
-  padding: 1px;
+  background:#D4CCBE;
 `;
 
 const LogoContainer = styled.div`
@@ -36,26 +34,22 @@ const LogoContainer = styled.div`
 `;
 
 const ToggleIconContainer = styled.div`
-  cursor: pointer; 
+  cursor: pointer;
   width: 100px;
-   
-    
 `;
 
 const SearchBox = styled.div`
   display: flex;
   align-items: center;
-  background: black;
+  background: #454545;
   border-radius: 50px;
   padding: 10px;
   width: 250px;
   height: 20px;
-     
- 
+  color: white  
 `;
 
 const SearchInput = styled.input`
-  margin-right: 20px; 
   padding: 6px;
   background: transparent;
   border: 0;
@@ -66,18 +60,17 @@ const SearchInput = styled.input`
 `;
 
 const NavList = styled.ul`
-  flex: 1;
   list-style: none;
   text-align: center;
-  display: inline-block;
+  display: flex;
 `;
 
 const NavItem = styled.li`
   display: inline-block;
-  margin: 10px 20px;
+  padding: 10px 20px;
   font-size: 30px;
   cursor: pointer;
-  
+  gap: 20px
 `;
 
 const StyledLink =styled(Link)`
@@ -109,7 +102,7 @@ export const Navbar = () => {
         <Image src={search_icon_light} alt="" style={{ width: 20, height: 20 }} />
       </SearchBox>
       <ToggleIconContainer>
-        <Image src={toggle} alt="" style={{ width: 60, height: 60 }} />
+        <Image className="border" src={toggle} alt="" style={{ width: 60, height: 60 }} />
       </ToggleIconContainer>
     </NavbarContainer>
   );
