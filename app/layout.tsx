@@ -1,8 +1,14 @@
+import { Navbar } from "@/components/navbar/navbar.component";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-
-
+import { Inter, Quicksand } from "next/font/google";
+import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
+import Head from 'next/head'; // I
+import ClientLayout from './GlobalStyling';
+import { Footer } from "./GlobalStyling";
 const inter = Inter({ subsets: ["latin"] });
+
+//Imported fonts
+const font = Quicksand({ subsets: ["latin"], weight:['400','700']})
 
 export const metadata: Metadata = {
   title: "E-comerce",
@@ -16,7 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={font.className}>
+        <Navbar/>
+        <ClientLayout>
+          {children}
+        </ClientLayout>
+      </body>
     </html>
   );
 }
