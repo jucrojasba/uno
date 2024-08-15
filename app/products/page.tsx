@@ -1,10 +1,12 @@
 import TableComponent from '@/components/table/table.component';
-import './product.css'
-export default function ProductTable() {
+
+const ProductTable:React.FC = ()=> {
     return (
       <>
+        <h1>Productos</h1>
         <TableComponent />
       </>
     );
   }
-  
+
+  export default ProductTable
