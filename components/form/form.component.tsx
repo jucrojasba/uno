@@ -7,6 +7,7 @@ import styled from "styled-components"
 import { setProduct } from "@/utilities/set-product.utility"
 import { Product } from "@/models/product.model"
 import Swal from "sweetalert2"
+import { GlobalTheme } from "@/app/GlobalStyling";
 
 const FormContainer = styled.form`
     display: flex;
@@ -16,8 +17,9 @@ const FormContainer = styled.form`
     button {
         width: 100%;
         padding: 10px;
-        background-color: #454545;
-        color: #fff;
+        margin-top: 10px;
+        background-color: ${GlobalTheme.colors.bgTertiary};
+        color: ${GlobalTheme.colors.textPrimary};
         border: none;
         border-radius: 10px;
         cursor: pointer;
@@ -41,10 +43,10 @@ const FormContainer = styled.form`
         padding: 10px;
         border-radius: 8px;
     }
-   
+
     input:focus, textarea:focus, button:focus {
         outline: none;
-        border-color: #454545;
+        border-color: ${GlobalTheme.colors.textTertiary};
     }
     `
 

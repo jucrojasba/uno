@@ -4,6 +4,7 @@ import { Product } from "@/models/product.model";
 import { getProducts } from "@/utilities/get-products.utility";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { GlobalTheme } from "@/app/GlobalStyling";
 
 // Implementation of Styled Component
 
@@ -16,6 +17,7 @@ const Main = styled.main`
 `;
 
 const Table = styled.table`
+  box-shadow: 0px 2px 4px ${GlobalTheme.colors.textQuaternary};
   text-align: center;
   width: 80%;
   border-collapse: separate;
@@ -25,26 +27,26 @@ const Table = styled.table`
 `;
 
 const Thead = styled.thead`
-  background-color: #454545;
+  background-color: ${GlobalTheme.colors.bgTertiary};
   font-size: 22px;
 `;
 
 const Tbody = styled.tbody``;
 
 const Tr = styled.tr`
-border: 1px solid #454545;
+border: 1px solid ${GlobalTheme.colors.bgTertiary};
 `;
 
 const Th = styled.th`
   padding: 10px;
-  color: #fff;
+  color: ${GlobalTheme.colors.textPrimary};
 `;
 
 const Td = styled.td`
   padding: 10px;
-  color: #000;
-  background: #e2c99f;
-  border-bottom: 3px solid #fff;
+  color: ${GlobalTheme.colors.textTertiary};
+  background: ${GlobalTheme.colors.widgetsQuaternary};
+  border-bottom: 2px solid ${GlobalTheme.colors.textPrimary};
 `;
 
 export default function TableComponent() {
@@ -67,7 +69,7 @@ export default function TableComponent() {
             <Th>NOMBRE</Th>
             <Th>PRECIO</Th>
             <Th>DESCRIPCIÓN</Th>
-            <Th>IMG</Th>
+            <Th>IMAGEN</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -87,7 +89,7 @@ export default function TableComponent() {
     })
   ) : (
     <Tr>
-      <Td colSpan={5}>No hay productos disponibles</Td>
+      <Td colSpan={5}>No hay productos disponibles...</Td>
     </Tr>
   )}
   </Tbody>
