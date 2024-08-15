@@ -43,6 +43,8 @@ function Form() {
         image: '',
     };
 
+    const defaultImageUrl = "https://as.com/epik/imagenes/2020/11/23/portada/1606131668_330819_1606132209_miniatura_normal.jpg";
+
     const [product, setProductState] = useState(newProduct);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -53,7 +55,12 @@ function Form() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        setProduct(product);
+        const productToSave = {
+            ...product,
+            image: product.image || defaultImageUrl,
+        };
+
+        setProduct(productToSave);
 
         setProductState(newProduct);
     };
