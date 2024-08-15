@@ -7,7 +7,7 @@ import Image from "next/image";
 
 //Implementation of Styled Component
 
-const Div = styled.div`
+const Main = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -99,7 +99,7 @@ export default function TableComponent() {
 
 
     return (
-      <Div>
+      <Main>
        <Table>
         <Thead>
           <Tr>
@@ -127,7 +127,7 @@ export default function TableComponent() {
     
         </Tbody>
       </Table>
-      </Div>
+      </Main>
     );
   }
 
