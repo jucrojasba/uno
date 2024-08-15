@@ -1,3 +1,4 @@
+import { Navbar } from "@/components/navbar/navbar.component";
 import type { Metadata } from "next";
 import { Inter, Quicksand } from "next/font/google";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";

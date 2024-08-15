@@ -25,3 +25,4 @@ const ProductTable: React.FC = () => {
 }
 
 export default ProductTable;
+
