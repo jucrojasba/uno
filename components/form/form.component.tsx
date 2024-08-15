@@ -55,7 +55,7 @@ function Form() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        const productToSave = {
+        const productToSave: Product = {
             ...product,
             image: product.image || defaultImageUrl,
         };
