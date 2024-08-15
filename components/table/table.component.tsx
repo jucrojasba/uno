@@ -12,52 +12,33 @@ const Main = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 1500px;
-  height: 100vh;
+  width: 80%;
   margin: auto;
-  border: 1px solid black;
-  `
-const Table = styled.table`
-  background-color: 'lightblue';
 `
-
-const Button = styled.button`
-  padding: 10px 20px;
-  background-color: greenyellow;
-  border: 1px solid black;
-  border-radius: 3px;
-  cursor: pointer;
-  `
-
+const Table = styled.table`
+  background-color: lightblue;
+`
 const Thead = styled.thead`
-  background-color: #D4CCBE;
   border-radius: 3px;
-  border: 1px solid black;
 `
 const Tbody = styled.tbody`
   background-color: #454545;
   border-radius: 3px;
-  border: 1px solid black;
 `
 
 const Tr = styled.tr`
   padding: 10px;
   border-radius: 3px;
-  border: 1px solid black;
 `
 const Th = styled.th`
   padding: 10px;
   border-radius: 3px;
-  border: 1px solid black;
   color: #fff;
-  font-family: 'verdana';
 `
 const Td = styled.td`
   padding: 10px;
   border-radius: 3px;
-  border: 1px solid black;
   color: #fff;
-
 `
 
 export default function TableComponent() {
