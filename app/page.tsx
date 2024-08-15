@@ -1,6 +1,4 @@
 "use client"
-import Image from "next/image";
-import { Navbar } from "../components/navbar/navbar.component";
 import styled from "styled-components";
 import React from "react";
 
@@ -13,7 +11,7 @@ const Main = styled.main`
 export default function Home() {
   return (
     <Main>
-      <Navbar />
+
     </Main>
   );
 }
