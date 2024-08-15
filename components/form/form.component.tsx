@@ -56,7 +56,7 @@ function Form() {
         image: '',
     };
 
-    const defaultImageUrl = "https://as.com/epik/imagenes/2020/11/23/portada/1606131668_330819_1606132209_miniatura_normal.jpg";
+    const defaultImageUrl = "/next.svg";
 
     const [product, setProductState] = useState(newProduct);
 

@@ -50,30 +50,7 @@ export default function TableComponent() {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    localStorage.setItem('products', JSON.stringify([
-      {
-        id: 1,
-        title: 'Producto 1',
-        description: 'Descripción del producto 1',
-        price: 100,
-        image: '/next.svg'
-      },
-      {
-        id: 2,
-        title: 'Producto 2',
-        description: 'Descripción del producto 2',
-        price: 200,
-        image: '/vercel.svg'
-      },
-      {
-        id: 3,
-        title: 'Producto 3',
-        description: 'Descripción del producto 3',
-        price: 300,
-        image: '/vercel.svg'
-      }
-    ]));
-
+    
     const productsList = getProducts();
     if (productsList) {
       setProducts(productsList);
