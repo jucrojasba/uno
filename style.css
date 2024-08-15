@@ -1,0 +1,16 @@
+.hola{
+    width: 160px;
+    cursor: pointer;
+}
+
+.hola:hover{
+    padding: 6px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    max-width: 200px;
+    background: black;
+    color: white;
+    margin-left: 30px;
+}
