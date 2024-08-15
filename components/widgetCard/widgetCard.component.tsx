@@ -35,7 +35,6 @@ const Text = styled.p`
 
 const WidgetBody = styled.div`
   padding: 20px;
-  border: 1px solid #60606033;
   border-radius: 5px;
 `
 

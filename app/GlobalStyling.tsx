@@ -43,6 +43,16 @@ const GlobalStyle = createGlobalStyle`
         margin-bottom: 20px;
     }
 `;
+export const Footer = styled.footer`
+    background-color: #60606033;
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+`;
 
 const ClientLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return (

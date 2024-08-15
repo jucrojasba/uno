@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Quicksand } from "next/font/google";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import Head from 'next/head'; // I
-import ClientLayout from './GlobalStyling/GlobalStyling';
-
+import ClientLayout from './GlobalStyling';
+import { Footer } from "./GlobalStyling";
 const inter = Inter({ subsets: ["latin"] });
 
 //Imported fonts
@@ -22,9 +22,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
+
         <ClientLayout>
           {children}
         </ClientLayout>
+        <Footer>
+        <p>&copy; 2024 Market, Inc.</p>
+        <p>Todos los derechos reservados.</p>
+      </Footer>
       </body>
     </html>
   );
