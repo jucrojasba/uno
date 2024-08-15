@@ -5,7 +5,7 @@ import { getProducts } from "@/utilities/get-products.utility";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-
+//Implementation of Styled Component
 
 const Main = styled.main`
   display: flex;
@@ -88,6 +88,8 @@ export default function TableComponent() {
           image: '/vercel.svg'
         }
       ]));
+      
+      
 
       const productsList = getProducts()
       if(productsList){
@@ -128,3 +130,4 @@ export default function TableComponent() {
       </Main>
     );
   }
+
