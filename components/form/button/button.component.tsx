@@ -1,9 +1,5 @@
 import React from 'react'
-
-interface ButtonProps {
-  type: "submit" | "button";
-  label: string;
-}
+import { ButtonProps } from '@/models/button.model';
 
 const Button: React.FC<ButtonProps> = ({ type, label }) => {
   return <button type={type}>{label}</button>;
