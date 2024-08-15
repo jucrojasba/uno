@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Product } from "@/models/product.model";
 import { getProducts } from "@/utilities/get-products.utility";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 
 
@@ -70,21 +71,21 @@ export default function TableComponent() {
           title: 'Producto 1',
           description: 'Descripción del producto 1',
           price: 100,
-          image: 'ruta de la imagen 1'
+          image: '/next.svg'
         },
         {
           id: 2,
           title: 'Producto 2',
           description: 'Descripción del producto 2',
           price: 200,
-          image: 'ruta de la imagen 2'
+          image: '/vercel.svg'
         },
         {
           id: 3,
           title: 'Producto 3',
           description: 'Descripción del producto 3',
           price: 300,
-          image: 'ruta de la imagen 3'
+          image: '/vercel.svg'
         }
       ]));
 
@@ -116,7 +117,7 @@ export default function TableComponent() {
                 <Td>{product.price}</Td>
                 <Td>{product.description}</Td>
                 <Td>
-                  <img src={product.image} alt="" />
+                  <Image src={product.image} alt="" width={100} height={100}/>
                 </Td>
               </Tr>
             )
