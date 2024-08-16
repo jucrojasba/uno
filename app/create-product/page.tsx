@@ -1,48 +1,51 @@
-'use client'
-import Form from '@/components/form/form.component';
+'use client';
+
+import React from 'react';
 import styled from 'styled-components';
 import { Kaushan_Script } from 'next/font/google';
+import Form from '@/components/form/form.component';
+import { GlobalTheme } from '../GlobalStyling';
 
 const kaushan = Kaushan_Script({
-  subsets: ["latin"],
+  subsets: ['latin'],
   weight: '400',
 });
 
-const MainComponent = styled.main`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-`
-const Container = styled.div`
-    width: 720px;
-    margin: 0 auto;
-    padding: 50px;
-    background-color: #e2c99f;
-    color: #000;
-    border-radius: 15px;
-    border: 1px #454545 solid;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
-   
-    h2 {
-      font-family: ${kaushan.style.fontFamily};
-      font-style: normal;
-      font-size: 50px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-`
+const Title = styled.h2`
+  font-family: ${kaushan.style.fontFamily};
+  font-style: normal;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 20px;
+`;
 
-export default function CreateProduct() {
-    return (
-      <MainComponent>
-        <Container>
-          <h2>Crear Producto</h2>
-          <Form />
-        </Container>
-      </MainComponent>
-    );
-  }
-  
+const Section = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
+
+const Container = styled.div`
+  width: 720px;
+  margin: 100px auto;
+  padding: 50px;
+  background-color: ${GlobalTheme.colors.widgetsQuaternary};
+  color: ${GlobalTheme.colors.textTertiary};
+  border-radius: 15px;
+  box-shadow: 0px 2px 4px ${GlobalTheme.colors.textQuaternary};
+  box-sizing: border-box;
+`;
+
+const CreateProduct: React.FC = () => {
+  return (
+    <Section>
+      <Container>
+        <Title>Crear Producto</Title>
+        <Form />
+      </Container>
+    </Section>
+  );
+}
+
+export default CreateProduct;

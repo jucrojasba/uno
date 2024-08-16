@@ -2,10 +2,11 @@
 import styled from "styled-components";
 import React from "react";
 import Link from 'next/link';
-import search_icon_light from '../navbar/assets/search-w.png'
-import toggle from '../navbar/assets/night.png'
+import search_icon_light from '/public/assets/img/search-b.png'
+import toggle from '/public/assets/img/night.png'
 import Image from 'next/image';
 import { Kaushan_Script } from 'next/font/google';
+import { GlobalTheme } from "@/app/GlobalStyling";
 
 
 const kaushan = Kaushan_Script({
@@ -17,68 +18,76 @@ const Title = styled.h1`
   font-family: ${kaushan.style.fontFamily};
   font-style: normal;
   font-size: 50px;
-  margin-left: 30px;
 `;
 
 const NavbarContainer = styled.div`
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background:#D4CCBE;
+  padding-left: 100px;
+  padding-right: 100px;
+  gap: 50px
 `;
 
 const LogoContainer = styled.div`
-  width: 160px;
+  width: 100px;
   cursor: pointer;
 `;
 
 const ToggleIconContainer = styled.div`
   cursor: pointer;
-  width: 100px;
 `;
 
 const SearchBox = styled.div`
   display: flex;
   align-items: center;
-  background: #454545;
+  background: ${GlobalTheme.colors.widgetsQuaternary};
   border-radius: 50px;
-  padding: 10px;
+  padding: 15px;
   width: 250px;
   height: 20px;
-  color: white  
+  color: ${GlobalTheme.colors.textTertiary}  
 `;
 
 const SearchInput = styled.input`
-  padding: 6px;
   background: transparent;
   border: 0;
   outline: 0;
-  font-size: 18px;
+  font-size: 20px;
   max-width: 200px;
-  color: white;
+  color: ${GlobalTheme.colors.textTertiary};
 `;
 
 const NavList = styled.ul`
   list-style: none;
   text-align: center;
   display: flex;
+  gap: 50px;
 `;
 
 const NavItem = styled.li`
   display: inline-block;
-  padding: 10px 20px;
-  font-size: 30px;
+  font-size: 20px;
   cursor: pointer;
-  gap: 20px
 `;
 
 const StyledLink =styled(Link)`
   text-decoration:none;
-  color: #454545;
+  padding: 15px;
+  border-radius: 15px;
+  color: ${GlobalTheme.colors.textTertiary};
 
-  &:hover{color: white}
+  &:hover{
+      font-weight: bold;
+      background-color: ${GlobalTheme.colors.widgetsQuaternary}
+    }
 `
+const Span = styled.span`
+    background-color: ${GlobalTheme.colors.widgetsQuaternary};
+    padding: 20px;
+    border-radius: 100%;
+    display: flex;
+`;
 
 export const Navbar = () => {
   return (
@@ -102,7 +111,9 @@ export const Navbar = () => {
         <Image src={search_icon_light} alt="" style={{ width: 20, height: 20 }} />
       </SearchBox>
       <ToggleIconContainer>
-        <Image className="border" src={toggle} alt="" style={{ width: 60, height: 60 }} />
+        <Span>
+          <Image className="border" src={toggle} alt="" style={{ width: 30, height: 30 }} />
+        </Span>
       </ToggleIconContainer>
     </NavbarContainer>
   );
