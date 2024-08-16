@@ -41,12 +41,12 @@ const ToggleIconContainer = styled.div`
 const SearchBox = styled.div`
   display: flex;
   align-items: center;
-  background: ${GlobalTheme.colors.widgetsQuaternary};
+  background: ${GlobalTheme.pageColors.widgetsQuaternary};
   border-radius: 50px;
   padding: 15px;
   width: 250px;
   height: 20px;
-  color: ${GlobalTheme.colors.textTertiary}  
+  color: ${GlobalTheme.pageColors.textTertiary}  
 `;
 
 const SearchInput = styled.input`
@@ -55,7 +55,7 @@ const SearchInput = styled.input`
   outline: 0;
   font-size: 20px;
   max-width: 200px;
-  color: ${GlobalTheme.colors.textTertiary};
+  color: ${GlobalTheme.pageColors.textTertiary};
 `;
 
 const NavList = styled.ul`
@@ -72,7 +72,7 @@ const NavItem = styled.li`
 `;
 
 const Span = styled.span`
-    background-color: ${GlobalTheme.colors.widgetsQuaternary};
+    background-color: ${GlobalTheme.pageColors.widgetsQuaternary};
     padding: 20px;
     border-radius: 100%;
     display: flex;

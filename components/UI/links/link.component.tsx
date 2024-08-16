@@ -8,11 +8,11 @@ const LinkComponent =styled(Link)`
   text-decoration:none;
   padding: 15px;
   border-radius: 15px;
-  color: ${GlobalTheme.colors.textTertiary};
+  color: ${GlobalTheme.pageColors.textTertiary};
 
   &:hover{
       font-weight: bold;
-      background-color: ${GlobalTheme.colors.widgetsQuaternary}
+      background-color: ${GlobalTheme.pageColors.widgetsQuaternary}
     }
 `
 

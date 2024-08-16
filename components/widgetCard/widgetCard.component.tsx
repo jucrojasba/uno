@@ -2,6 +2,7 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { GlobalTheme } from "@/app/GlobalStyling";
+import StyledTagLink from "../UI/links/tagsLink.component";
 
 //Implementation of Styled Component
 
@@ -14,34 +15,18 @@ const Section = styled.section`
 
 const WidgetCard = styled.div`
     padding: 50px;
-    background-color: ${GlobalTheme.colors.widgetsQuaternary};
+    background-color: ${GlobalTheme.pageColors.widgetsQuaternary};
     border-radius: 5px;
     display: flex;
     gap: 20px
 `
 
-const ToyTag = styled.span`
-    padding: 10px 20px;
-    background-color: ${GlobalTheme.colors.btnQuinary};
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer
-`
-
-const GameTag = styled.span`
-    padding: 10px 20px;
-    background-color: ${GlobalTheme.colors.btnSenary};
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer
-`
-
 const BrandName = styled.h2`
-    color: ${GlobalTheme.colors.textTertiary}
+    color: ${GlobalTheme.pageColors.textTertiary}
 `
 
 const Text = styled.p`
-    color: ${GlobalTheme.colors.textTertiary};
+    color: ${GlobalTheme.pageColors.textTertiary};
     padding-bottom: 50px
 `
 
@@ -57,21 +42,22 @@ export default function WidgetCardComponent() {
                 <WidgetBody>
                     <BrandName>MATTEL</BrandName>
                     <Text>Acompañamos en los mejores momentos de su niñez.</Text>
-                    <ToyTag>#Toys</ToyTag>
+                    <StyledTagLink href="https://es.wikipedia.org/wiki/Juguete" label="#Toys" target="_blank"></StyledTagLink>
                 </WidgetBody>
             </WidgetCard>
             <WidgetCard>
                 <WidgetBody>
                     <BrandName>LEGO</BrandName>
                     <Text>Acompañamos en los mejores momentos de su niñez.</Text>
-                    <ToyTag>#Toys</ToyTag>
+                    <StyledTagLink href="https://es.wikipedia.org/wiki/
+                    Juguete" label="#Toys" target="_blank"></StyledTagLink>
                 </WidgetBody>
             </WidgetCard>
             <WidgetCard>
                 <WidgetBody>
                     <BrandName>Mi Alegria</BrandName>
                     <Text>Acompañamos en los mejores momentos de su niñez.</Text>
-                    <GameTag>#Games</GameTag>
+                    <StyledTagLink href="https://es.wikipedia.org/wiki/Juego_de_mesa" label="#Games" target="_blank"></StyledTagLink>
                 </WidgetBody>
             </WidgetCard>
         </Section>

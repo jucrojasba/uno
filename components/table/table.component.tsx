@@ -19,7 +19,7 @@ const Main = styled.main`
 `;
 
 const Table = styled.table`
-  box-shadow: 0px 2px 4px ${GlobalTheme.colors.textQuaternary};
+  box-shadow: 0px 2px 4px ${GlobalTheme.pageColors.textQuaternary};
   text-align: center;
   width: 80%;
   border-collapse: separate;
@@ -29,26 +29,26 @@ const Table = styled.table`
 `;
 
 const Thead = styled.thead`
-  background-color: ${GlobalTheme.colors.bgTertiary};
+  background-color: ${GlobalTheme.pageColors.bgTertiary};
   font-size: 22px;
 `;
 
 const Tbody = styled.tbody``;
 
 const Tr = styled.tr`
-border: 1px solid ${GlobalTheme.colors.bgTertiary};
+border: 1px solid ${GlobalTheme.pageColors.bgTertiary};
 `;
 
 const Th = styled.th`
   padding: 10px;
-  color: ${GlobalTheme.colors.textPrimary};
+  color: ${GlobalTheme.pageColors.textPrimary};
 `;
 
 const Td = styled.td`
   padding: 10px;
-  color: ${GlobalTheme.colors.textTertiary};
-  background: ${GlobalTheme.colors.widgetsQuaternary};
-  border-bottom: 2px solid ${GlobalTheme.colors.textPrimary};
+  color: ${GlobalTheme.pageColors.textTertiary};
+  background: ${GlobalTheme.pageColors.widgetsQuaternary};
+  border-bottom: 2px solid ${GlobalTheme.pageColors.textPrimary};
 `;
 export default function TableComponent() {
   const [products, setProducts] = useState<Product[]>([]);

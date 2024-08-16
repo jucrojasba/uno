@@ -18,8 +18,8 @@ const FormContainer = styled.form`
         width: 100%;
         padding: 10px;
         margin-top: 10px;
-        background-color: ${GlobalTheme.colors.bgTertiary};
-        color: ${GlobalTheme.colors.textPrimary};
+        background-color: ${GlobalTheme.pageColors.bgTertiary};
+        color: ${GlobalTheme.pageColors.textPrimary};
         border: none;
         border-radius: 10px;
         cursor: pointer;
@@ -46,7 +46,7 @@ const FormContainer = styled.form`
 
     input:focus, textarea:focus, button:focus {
         outline: none;
-        border-color: ${GlobalTheme.colors.textTertiary};
+        border-color: ${GlobalTheme.pageColors.textTertiary};
     }
     `
 

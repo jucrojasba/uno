@@ -27,12 +27,12 @@ const Title = styled.h1`
     font-family: ${kaushan.style.fontFamily};
     font-style: normal;
     font-size: 50px;
-    color: ${GlobalTheme.colors.textQuaternary};
+    color: ${GlobalTheme.pageColors.textQuaternary};
 `;
 
 const Section = styled.section`
     margin-bottom: 50px;
-    background-color: ${GlobalTheme.colors.widgetsQuaternary};
+    background-color: ${GlobalTheme.pageColors.widgetsQuaternary};
     margin-top: 50px;
     padding: 50px;
     border-radius: 15px;
@@ -47,7 +47,7 @@ const SocialMediaSection = styled.section`
 `;
 
 const Span = styled.span`
-    background-color: ${GlobalTheme.colors.widgetsQuaternary};
+    background-color: ${GlobalTheme.pageColors.widgetsQuaternary};
     padding: 20px;
     border-radius: 100%;
     display: flex;
