@@ -2,6 +2,9 @@ import { TableBodyProps } from "@/models/tableBody"
 import { Product } from "@/models/product.model"
 import { getProducts } from "@/utilities/get-products.utility"
 import Swal from 'sweetalert2';
+import styled from "styled-components";
+import toggle from '/public/assets/img/night.png'
+import { GlobalTheme } from "@/app/GlobalStyling";
 
 export const handleDelete = (id: number, setProducts: (products: Product[]) => void) => {
   Swal.fire({
