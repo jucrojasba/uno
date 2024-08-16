@@ -6,9 +6,6 @@ import { getProducts } from "@/utilities/get-products.utility";
 import { useEffect, useState } from "react";
 import { TableHead } from "../UI/tableHead/tableHead.ui";
 import { TableBody } from "../UI/tableBody/tableBody.ui";
-
-
-
 const Main = styled.main`
   display: flex;
   flex-direction: column;
@@ -16,7 +13,6 @@ const Main = styled.main`
   align-items: center;
   margin: auto;
 `;
-
 const Table = styled.table`
   text-align: center;
   width: 80%;
@@ -25,7 +21,6 @@ const Table = styled.table`
   border-radius: 10px;
   overflow: hidden;
 `;
-
 export default function TableComponent() {
   const [products, setProducts] = useState<Product[]>([]);
 
