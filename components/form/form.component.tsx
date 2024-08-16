@@ -1,8 +1,8 @@
 'use client'
 import React, { useState } from "react"
-import Input from "@/components/UI/input/input.component"
-import Textarea from "@/components/UI/textarea/textarea.component"
-import Button from "@/components/form/button/button.component"
+import Input from "@/components/UI/input/input.ui"
+import Textarea from "@/components/UI/textarea/textarea.ui"
+import Button from "@/components/UI/button/button.ui"
 import styled from "styled-components"
 import { setProduct } from "@/utilities/set-product.utility"
 import { Product } from "@/models/product.model"
