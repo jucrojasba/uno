@@ -8,50 +8,13 @@ import styled from "styled-components"
 import { setProduct } from "@/utilities/set-product.utility"
 import { Product } from "@/models/product.model"
 import Swal from "sweetalert2"
-import { GlobalTheme } from "@/app/GlobalStyling";
+
 
 const FormContainer = styled.form`
     display: flex;
     flex-direction: column;
     gap: 10px;
-    
-    button {
-        width: 100%;
-        padding: 10px;
-        margin-top: 10px;
-        background-color: ${GlobalTheme.pageColors.bgTertiary};
-        color: ${GlobalTheme.pageColors.textPrimary};
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        font-weight: bold;
-    }
-
-    button:hover {
-        opacity: .8;
-        cursor: pointer;
-        transition: background-color 0.3s ease-in-out;
-    }
-
-    input{
-        padding: 10px;
-        border-radius: 10px;
-        border: none;
-    }
-
-    textarea {
-        height: 100px;
-        resize: none;
-        padding: 10px;
-        border-radius: 8px;
-        border: none;
-    }
-
-    input:focus, textarea:focus, button:focus {
-        outline: none;
-        border-color: ${GlobalTheme.pageColors.textTertiary};
-    }
-    `
+`
 
 function Form() {
     const newProduct: Product = {
