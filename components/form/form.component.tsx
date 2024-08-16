@@ -2,7 +2,8 @@
 import React, { useState } from "react"
 import Input from "@/components/UI/input/input.ui"
 import Textarea from "@/components/UI/textarea/textarea.ui"
-import Button from "@/components/UI/buttonCreate/buttonCreate.ui"
+import ButtonCreate from "@/components/UI/buttonCreate/buttonCreate.ui"
+import ButtonClear from "@/components/UI/buttonClear/buttonClear.ui"
 import styled from "styled-components"
 import { setProduct } from "@/utilities/set-product.utility"
 import { Product } from "@/models/product.model"
@@ -126,8 +127,8 @@ function Form() {
                 value={product.image}
                 onChange={handleChange}
             />
-            <Button type="submit" label="Guardar" />
-            <Button type="button" label="Limpiar" onClick={resetInput} />
+            <ButtonCreate type="submit" label="Guardar" />
+            <ButtonClear type="button" label="Limpiar" onClick={resetInput} />
         </FormContainer>
     )
 }
