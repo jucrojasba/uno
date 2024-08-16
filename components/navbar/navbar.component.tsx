@@ -1,7 +1,7 @@
 "use client";
 import styled from "styled-components";
 import React from "react";
-import Link from 'next/link';
+import StyledLink from "../UI/links/link.component";
 import search_icon_light from '/public/assets/img/search-b.png'
 import toggle from '/public/assets/img/night.png'
 import Image from 'next/image';
@@ -41,12 +41,12 @@ const ToggleIconContainer = styled.div`
 const SearchBox = styled.div`
   display: flex;
   align-items: center;
-  background: ${GlobalTheme.colors.widgetsQuaternary};
+  background: ${GlobalTheme.pageColors.widgetsQuaternary};
   border-radius: 50px;
   padding: 15px;
   width: 250px;
   height: 20px;
-  color: ${GlobalTheme.colors.textTertiary}  
+  color: ${GlobalTheme.pageColors.textTertiary}  
 `;
 
 const SearchInput = styled.input`
@@ -55,7 +55,7 @@ const SearchInput = styled.input`
   outline: 0;
   font-size: 20px;
   max-width: 200px;
-  color: ${GlobalTheme.colors.textTertiary};
+  color: ${GlobalTheme.pageColors.textTertiary};
 `;
 
 const NavList = styled.ul`
@@ -71,19 +71,8 @@ const NavItem = styled.li`
   cursor: pointer;
 `;
 
-const StyledLink =styled(Link)`
-  text-decoration:none;
-  padding: 15px;
-  border-radius: 15px;
-  color: ${GlobalTheme.colors.textTertiary};
-
-  &:hover{
-      font-weight: bold;
-      background-color: ${GlobalTheme.colors.widgetsQuaternary}
-    }
-`
 const Span = styled.span`
-    background-color: ${GlobalTheme.colors.widgetsQuaternary};
+    background-color: ${GlobalTheme.pageColors.widgetsQuaternary};
     padding: 20px;
     border-radius: 100%;
     display: flex;
@@ -97,13 +86,13 @@ export const Navbar = () => {
       </LogoContainer>
       <NavList>
         <NavItem>
-          <StyledLink href="/">Inicio</StyledLink>
+          <StyledLink href="/" label="Inicio"></StyledLink>
         </NavItem>
         <NavItem>
-          <StyledLink href="/products">Productos</StyledLink>
+          <StyledLink href="/products" label="Productos"></StyledLink>
         </NavItem>
         <NavItem>
-          <StyledLink href="/create-product">Crear</StyledLink>
+          <StyledLink href="/create-product" label="Crear"></StyledLink>
         </NavItem>
       </NavList>
       <SearchBox>

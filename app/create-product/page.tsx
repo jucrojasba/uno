@@ -30,10 +30,10 @@ const Container = styled.div`
   width: 720px;
   margin: 100px auto;
   padding: 50px;
-  background-color: ${GlobalTheme.colors.widgetsQuaternary};
-  color: ${GlobalTheme.colors.textTertiary};
+  background-color: ${GlobalTheme.pageColors.widgetsQuaternary};
+  color: ${GlobalTheme.pageColors.textTertiary};
   border-radius: 15px;
-  box-shadow: 0px 2px 4px ${GlobalTheme.colors.textQuaternary};
+  box-shadow: 0px 2px 4px ${GlobalTheme.pageColors.textQuaternary};
   box-sizing: border-box;
 `;
 
