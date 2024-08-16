@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { TableHead } from "../UI/tableHead/tableHead.ui";
 import { TableBody } from "../UI/tableBody/tableBody.component";
 
-// import { TableBody }
+
 
 const Main = styled.main`
   display: flex;
@@ -36,7 +36,7 @@ export default function TableComponent() {
     }
   }, []);
 
-  const columns = ["ID", "NOMBRE", "PRECIO", "DESCRIPCIÓN", "IMG"];
+  const columns = ["ID", "NOMBRE", "PRECIO", "DESCRIPCIÓN", "IMG","FUNCIONES"];
 
   return (
     <Main>
