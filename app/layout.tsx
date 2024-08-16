@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
-import ClientLayout from './GlobalStyling';
+import ClientLayout from './ClientLayout';
 
 //Imported fonts
 const font = Quicksand({ subsets: ["latin"], weight:['400','700']})

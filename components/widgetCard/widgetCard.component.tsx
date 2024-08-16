@@ -1,6 +1,7 @@
 "use client";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
+import { GlobalTheme } from "@/app/GlobalStyling";
 
 //Implementation of Styled Component
 
@@ -13,24 +14,34 @@ const Section = styled.section`
 
 const WidgetCard = styled.div`
     padding: 50px;
-    background-color: #60606033;
+    background-color: ${GlobalTheme.colors.widgetsQuaternary};
     border-radius: 5px;
     display: flex;
     gap: 20px
 `
 
-const Span = styled.span`
+const ToyTag = styled.span`
     padding: 10px 20px;
-    background-color: #D49898;
+    background-color: ${GlobalTheme.colors.btnQuinary};
     border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer
+`
+
+const GameTag = styled.span`
+    padding: 10px 20px;
+    background-color: ${GlobalTheme.colors.btnSenary};
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer
 `
 
 const BrandName = styled.h2`
-    color: #454545
+    color: ${GlobalTheme.colors.textTertiary}
 `
 
 const Text = styled.p`
-    color: #454545;
+    color: ${GlobalTheme.colors.textTertiary};
     padding-bottom: 50px
 `
 
@@ -39,7 +50,6 @@ const WidgetBody = styled.div`
     border-radius: 5px;
 `
 
-
 export default function WidgetCardComponent() {
     return (
         <Section>
@@ -47,21 +57,21 @@ export default function WidgetCardComponent() {
                 <WidgetBody>
                     <BrandName>MATTEL</BrandName>
                     <Text>Acompañamos en los mejores momentos de su niñez.</Text>
-                    <Span>#Toys</Span>
+                    <ToyTag>#Toys</ToyTag>
                 </WidgetBody>
             </WidgetCard>
             <WidgetCard>
                 <WidgetBody>
                     <BrandName>LEGO</BrandName>
                     <Text>Acompañamos en los mejores momentos de su niñez.</Text>
-                    <Span>#Toys</Span>
+                    <ToyTag>#Toys</ToyTag>
                 </WidgetBody>
             </WidgetCard>
             <WidgetCard>
                 <WidgetBody>
                     <BrandName>Mi Alegria</BrandName>
                     <Text>Acompañamos en los mejores momentos de su niñez.</Text>
-                    <Span>#Toys</Span>
+                    <GameTag>#Games</GameTag>
                 </WidgetBody>
             </WidgetCard>
         </Section>
