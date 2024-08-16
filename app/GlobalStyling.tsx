@@ -12,6 +12,8 @@ export const GlobalTheme = {
         textTertiary: '#454545',            //Dark Gray
         widgetsQuaternary: '#60606033',     //Gray (20% Opacity)
         textQuaternary: '#60606050',        //Gray (50% Opacity)
+        btnQuinary: '#D49898',              //Red
+        btnSenary: '#98A9D4',               //Blue
     },
     tagsColor: {
         tagQuinary: '#D49898',              //Red

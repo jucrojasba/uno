@@ -2,7 +2,7 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { GlobalTheme } from "@/app/GlobalStyling";
-import StyledTagLink from "../UI/links/tagsLink.component";
+import StyledTagLink from "../UI/links/tagsLink.ui";
 
 //Implementation of Styled Component
 
