@@ -2,7 +2,7 @@
 import React, { useState } from "react"
 import Input from "@/components/UI/input/input.ui"
 import Textarea from "@/components/UI/textarea/textarea.ui"
-import Button from "@/components/UI/button/button.ui"
+import Button from "@/components/UI/buttonCreate/buttonCreate.ui"
 import styled from "styled-components"
 import { setProduct } from "@/utilities/set-product.utility"
 import { Product } from "@/models/product.model"
@@ -35,6 +35,7 @@ const FormContainer = styled.form`
     input{
         padding: 10px;
         border-radius: 10px;
+        border: none;
     }
 
     textarea {
@@ -42,6 +43,7 @@ const FormContainer = styled.form`
         resize: none;
         padding: 10px;
         border-radius: 8px;
+        border: none;
     }
 
     input:focus, textarea:focus, button:focus {
