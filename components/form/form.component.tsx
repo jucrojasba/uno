@@ -10,6 +10,25 @@ import { Product } from "@/models/product.model"
 import Swal from "sweetalert2"
 import { GlobalTheme } from "@/app/GlobalStyling";
 
+const ColspanInputs = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        label {
+            margin-bottom: 10px;
+        }
+    }
+}
+    `
+
 const FormContainer = styled.form`
     display: flex;
     flex-direction: column;
@@ -59,6 +78,7 @@ function Form() {
         title: '',
         description: '',
         price: 0,
+        tag: '',
         image: '',
     };
 
@@ -68,7 +88,7 @@ function Form() {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { id, value } = e.target;
-        setProductState({...product, [id]: value});
+        setProductState({ ...product, [id]: value });
     }
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -84,9 +104,9 @@ function Form() {
         Swal.fire({
             title: 'Producto Guardado',
             text: 'El producto se ha guardado correctamente.',
-            icon:'success',
+            icon: 'success',
             confirmButtonText: 'Aceptar',
-            didClose: () => {   window.location.href='/products'; }
+            didClose: () => { window.location.href = '/products'; }
         })
 
         setProductState(newProduct);
@@ -112,14 +132,28 @@ function Form() {
                 value={product.description}
                 onChange={handleChange}
             />
-            <Input
-                type="number"
-                placeholder="Precio"
-                id="price"
-                value={String(product.price)}
-                onChange={handleChange}
-                required
-            />
+            <ColspanInputs>
+                <div>
+                    <Input
+                        type="number"
+                        placeholder="Precio"
+                        id="price"
+                        value={String(product.price)}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div>
+                    <Input
+                        type="text"
+                        placeholder="Tag"
+                        id="tag"
+                        value={String(product.tag)}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+            </ColspanInputs>
             <Input
                 type="url"
                 placeholder="URL Imagen"
