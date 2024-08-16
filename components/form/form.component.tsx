@@ -1,8 +1,9 @@
 'use client'
 import React, { useState } from "react"
-import Input from "@/components/form/input/input.component"
-import Textarea from "@/components/form/textarea/textarea.component"
-import Button from "@/components/form/button/button.component"
+import Input from "@/components/UI/input/input.ui"
+import Textarea from "@/components/UI/textarea/textarea.ui"
+import ButtonCreate from "@/components/UI/buttonCreate/buttonCreate.ui"
+import ButtonClear from "@/components/UI/buttonClear/buttonClear.ui"
 import styled from "styled-components"
 import { setProduct } from "@/utilities/set-product.utility"
 import { Product } from "@/models/product.model"
@@ -35,6 +36,7 @@ const FormContainer = styled.form`
     input{
         padding: 10px;
         border-radius: 10px;
+        border: none;
     }
 
     textarea {
@@ -42,6 +44,7 @@ const FormContainer = styled.form`
         resize: none;
         padding: 10px;
         border-radius: 8px;
+        border: none;
     }
 
     input:focus, textarea:focus, button:focus {
@@ -124,8 +127,8 @@ function Form() {
                 value={product.image}
                 onChange={handleChange}
             />
-            <Button type="submit" label="Guardar" />
-            <Button type="button" label="Limpiar" onClick={resetInput} />
+            <ButtonCreate type="submit" label="Guardar" />
+            <ButtonClear type="button" label="Limpiar" onClick={resetInput} />
         </FormContainer>
     )
 }
