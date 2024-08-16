@@ -1,7 +1,7 @@
 "use client";
 import styled from "styled-components";
 import React from "react";
-import StyledLink from "../UI/links/link.component";
+import StyledLink from "../UI/links/link.ui";
 import search_icon_light from '/public/assets/img/search-b.png'
 import toggle from '/public/assets/img/night.png'
 import Image from 'next/image';

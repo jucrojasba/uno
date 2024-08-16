@@ -1,14 +1,15 @@
 import styled from "styled-components";
 import { TableHeadProps } from "@/models/tableHead";
+import { GlobalTheme } from "@/app/GlobalStyling";
 
 const Thead = styled.thead`
-  background-color: #454545;
-  font-size: 22px;
+  background-color: ${GlobalTheme.pageColors.bgTertiary};
+  font-size: 20px;
 `;
 
 const Th = styled.th`
   padding: 10px;
-  color: #fff;
+  color: ${GlobalTheme.pageColors.textPrimary};
 `;
 
 export function TableHead({ columns }: TableHeadProps) {

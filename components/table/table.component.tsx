@@ -5,7 +5,7 @@ import { Product } from "@/models/product.model";
 import { getProducts } from "@/utilities/get-products.utility";
 import { useEffect, useState } from "react";
 import { TableHead } from "../UI/tableHead/tableHead.ui";
-import { TableBody } from "../UI/tableBody/tableBody.component";
+import { TableBody } from "../UI/tableBody/tableBody.ui";
 
 
 

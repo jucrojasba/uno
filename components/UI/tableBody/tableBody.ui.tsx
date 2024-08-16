@@ -4,25 +4,27 @@ import Image from "next/image";
 import { TableBodyProps } from "@/models/tableBody";
 import React, { useState, useEffect } from 'react';
 import { getProducts } from "@/utilities/get-products.utility"
-import { handleDelete } from "../deleteButton/ButtonDelete.ui"
+import { handleDelete } from "../deleteButton/buttonDelete.ui"
+import { GlobalTheme } from "@/app/GlobalStyling";
 
 const Tbody = styled.tbody``;
+
 const Tr = styled.tr`
-  border: 1px solid #454545;
+  border: 1px solid ${GlobalTheme.pageColors.textTertiary};
 `;
 
 const Td = styled.td`
   padding: 10px;
-  color: #000;
-  background: #e2c99f;
-  border-bottom: 3px solid #fff;
+  color: ${GlobalTheme.pageColors.textTertiary};
+  background: ${GlobalTheme.pageColors.widgetsQuaternary};
+  border-bottom: 3px solid ${GlobalTheme.pageColors.textPrimary};
 `;
 
 const ButtonDelete = styled.button`
-  background-color: #ff0000;
-  color: #fff;
+  background-color: ${GlobalTheme.pageColors.btnQuinary};
+  color: ${GlobalTheme.pageColors.textPrimary};
   border: none;
-  padding: 5px 10px;
+  padding: 10px;
   cursor: pointer;
 `;
 
