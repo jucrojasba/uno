@@ -1,8 +1,6 @@
 'use client';
 import React from "react";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
-import { Navbar } from "@/components/navbar/navbar.component";
-import { Footer } from "@/components/footer/footer.component";
 
 // Setting our Global Theme
 export const GlobalTheme = {
@@ -23,15 +21,16 @@ export const GlobalTheme = {
 export const GlobalStyle = createGlobalStyle`
 html{
     width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(0deg, ${GlobalTheme.colors.bgPrimary} 60%, ${GlobalTheme.colors.bgSecondary} 100%) !important;
 }    
 
 body {
-        background: linear-gradient(0deg, ${GlobalTheme.colors.bgPrimary} 60%, ${GlobalTheme.colors.bgSecondary} 100%);
+        background: transparent;
         color: ${GlobalTheme.colors.textTertiary};
-        margin: 0 !important;
-        padding: 0 !important;
+        margin: 0;
+        padding: 0;
         box-sizing: border-box;
         min-height: 100vh;
         width: 100% !important;
