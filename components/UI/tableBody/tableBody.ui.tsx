@@ -6,8 +6,11 @@ import React, { useState, useEffect } from 'react';
 import { getProducts } from "@/utilities/get-products.utility"
 import { handleDelete } from "../deleteButton/buttonDelete.ui"
 import { GlobalTheme } from "@/app/GlobalStyling";
+
 import toggle from '@/public/assets/img/compartimiento.png'
 import { Span } from "@/components/UI/deleteButton/buttonDelete.ui";
+import StyledTagLink from "../links/tagsLink.ui";
+
 
 const Tbody = styled.tbody``;
 
@@ -20,6 +23,14 @@ const Td = styled.td`
   color: ${GlobalTheme.pageColors.textTertiary};
   background: ${GlobalTheme.pageColors.widgetsQuaternary};
   border-bottom: 3px solid ${GlobalTheme.pageColors.textPrimary};
+
+  & div{
+    margin-top: 10px;
+  }
+
+  & div > *{
+    cursor: default;
+    margin-top: 10px;
 `;
 
 type HandleDeleteProduct = (id: number) => void;
@@ -72,7 +83,10 @@ const TableBody = ({ products }: TableBodyProps) => {
         productsList.map((product: Product) => (
           <Tr key={product.id}>
             <Td>{product.id}</Td>
-            <Td>{product.title}</Td>
+            <Td>{product.title}
+              <div>
+                <StyledTagLink href="/" label={product.tag}></StyledTagLink>
+              </div></Td>
             <Td>{product.price}</Td>
             <Td>{product.description}</Td>
             <Td>

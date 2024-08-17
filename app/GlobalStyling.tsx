@@ -1,9 +1,10 @@
 'use client';
 import React from "react";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
+import { IGlobalTheme } from "@/models/GlobalTheme";
 
 // Setting our Global Theme
-export const GlobalTheme = {
+export const GlobalTheme: IGlobalTheme = {
     pageColors: {
         bgPrimary: '#FFFFFF',               //White
         textPrimary: '#FFFFFF',             //White
@@ -16,6 +17,7 @@ export const GlobalTheme = {
         btnSenary: '#98A9D4',               //Blue
     },
     tagsColor: {
+        tagQuaternary: '#60606050',         //Gray (50% Opacity)
         tagQuinary: '#D49898',              //Red
         tagSenary: '#98A9D4',               //Blue
     }
