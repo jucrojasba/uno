@@ -1,7 +1,9 @@
-import { TableBodyProps } from "@/models/tableBody"
+
 import { Product } from "@/models/product.model"
 import { getProducts } from "@/utilities/get-products.utility"
 import Swal from 'sweetalert2';
+import styled from "styled-components";
+import { GlobalTheme } from "@/app/GlobalStyling";
 
 export const handleDelete = (id: number, setProducts: (products: Product[]) => void) => {
   Swal.fire({
@@ -26,3 +28,17 @@ export const handleDelete = (id: number, setProducts: (products: Product[]) => v
     }
   });
 };
+const Span = styled.span`
+    background-color: ${GlobalTheme.pageColors.widgetsQuaternary};
+    padding: 20px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    width:15px;
+    height:15px;
+    justify-content: center;
+    margin-right: 10px;
+    cursor: pointer;
+`;
+
+export { Span }

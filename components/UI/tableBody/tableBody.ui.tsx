@@ -6,7 +6,11 @@ import React, { useState, useEffect } from 'react';
 import { getProducts } from "@/utilities/get-products.utility"
 import { handleDelete } from "../deleteButton/buttonDelete.ui"
 import { GlobalTheme } from "@/app/GlobalStyling";
+
+import toggle from '@/public/assets/img/compartimiento.png'
+import { Span } from "@/components/UI/deleteButton/buttonDelete.ui";
 import StyledTagLink from "../links/tagsLink.ui";
+
 
 const Tbody = styled.tbody``;
 
@@ -29,32 +33,54 @@ const Td = styled.td`
     margin-top: 10px;
 `;
 
-const ButtonDelete = styled.button`
-  background-color: ${GlobalTheme.pageColors.btnQuinary};
-  color: ${GlobalTheme.pageColors.textPrimary};
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-`;
+type HandleDeleteProduct = (id: number) => void;
 
 const TableBody = ({ products }: TableBodyProps) => {
-  const [productsState, setProductsState] = useState<Product[]>([]);
+  const [productsList, setProductsList] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const productsList = getProducts();
-    if (productsList) {
-      setProductsState(productsList);
-    }
+    const fetchProducts = async () => {
+      try {
+        const productsList = await getProducts();
+        setProductsList(productsList);
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+      }
+    };
+    fetchProducts();
   }, []);
 
-  const handleDeleteProduct = (id: number) => {
-    handleDelete(id, setProductsState);
+  const handleDeleteProduct: HandleDeleteProduct = (id) => {
+    handleDelete(id, setProductsList);
   };
+
+  if (loading) {
+    return (
+      <Tbody>
+        <Tr>
+          <Td colSpan={6}>Cargando...</Td>
+        </Tr>
+      </Tbody>
+    );
+  }
+
+  if (error) {
+    return (
+      <Tbody>
+        <Tr>
+          <Td colSpan={6}>Error al cargar los productos</Td>
+        </Tr>
+      </Tbody>
+    );
+  }
 
   return (
     <Tbody>
-      {productsState.length > 0 ? (
-        productsState.map((product: Product) => (
+      {productsList.length > 0 ? (
+        productsList.map((product: Product) => (
           <Tr key={product.id}>
             <Td>{product.id}</Td>
             <Td>{product.title}
@@ -72,9 +98,9 @@ const TableBody = ({ products }: TableBodyProps) => {
               />
             </Td>
             <Td>
-              <ButtonDelete onClick={() => handleDeleteProduct(product.id)}>
-                Eliminar
-              </ButtonDelete>
+              <Span >
+                <Image src={toggle} alt="" style={{ width: 20, height: 20 }}onClick={() => handleDeleteProduct(product.id)} />
+              </Span>
             </Td>
           </Tr>
         ))
