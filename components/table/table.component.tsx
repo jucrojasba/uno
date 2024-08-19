@@ -6,6 +6,7 @@ import { getProducts } from "@/utilities/get-products.utility";
 import { useEffect, useState } from "react";
 import { TableHead } from "../UI/tableHead/tableHead.ui";
 import { TableBody } from "../UI/tableBody/tableBody.ui";
+
 const Main = styled.main`
   display: flex;
   flex-direction: column;

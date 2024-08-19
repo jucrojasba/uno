@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
 import ClientLayout from './ClientLayout';
 
-//Imported fonts
-const font = Quicksand({ subsets: ["latin"], weight:['400','700']})
+// Imported fonts
+const QuicksandFont = Quicksand({ subsets: ["latin"], weight: ['400', '700'] });
 
 export const metadata: Metadata = {
   title: "Market | Games & Toys",
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={font.className}>
+      <body className={QuicksandFont.className}>
         <ClientLayout>
           {children}
         </ClientLayout>

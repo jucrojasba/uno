@@ -1,14 +1,13 @@
 import React from 'react'
 import { ButtonFormProps } from '@/models/buttonForm.model';
-import { GlobalTheme } from '@/app/GlobalStyling';
 import styled from 'styled-components';
 
-const ButtonCleanStyle = styled.button`
-  width: 100%;
+const ButtonClearStyle = styled.button`
+  width: 100px;
   padding: 10px;
   margin-top: 10px;
-  background-color: ${GlobalTheme.pageColors.bgTertiary};
-  color: ${GlobalTheme.pageColors.textPrimary};
+  background-color: ${({ theme }) => theme.pageColors.btnQuaternary};
+  color: ${({ theme }) => theme.pageColors.textPrimary};
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -21,9 +20,8 @@ const ButtonCleanStyle = styled.button`
   }
 `
 
-
 const ButtonClear: React.FC<ButtonFormProps> = ({ type, label, onClick }) => {
-  return <ButtonCleanStyle type={type} onClick={onClick}>{label}</ButtonCleanStyle>;
+  return <ButtonClearStyle type={type} onClick={onClick}>{label}</ButtonClearStyle>;
 };
 
 export default ButtonClear

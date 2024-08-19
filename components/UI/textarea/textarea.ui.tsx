@@ -1,14 +1,14 @@
 import React from "react";
 import { TextareaProps } from "@/models/textarea.model";
-import { GlobalTheme } from "@/app/GlobalStyling";
 import styled from "styled-components";
 
 const LabelStyle = styled.label`
   font-size: 16px;
-  color: ${GlobalTheme.pageColors.textTertiary};
+  color: ${({ theme }) => theme.pageColors.textTertiary};
 `;
 
 const TextareaStyle = styled.textarea`
+  width: 100%;
   height: 100px;
   resize: none;
   padding: 10px;
@@ -17,7 +17,7 @@ const TextareaStyle = styled.textarea`
   
   &:focus {
     outline: none;
-    border-color: ${GlobalTheme.pageColors.textTertiary};
+    border-color: ${({ theme }) => theme.pageColors.textTertiary};
   }
 `;
 
