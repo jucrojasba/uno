@@ -1,7 +1,7 @@
 'use client'
 import React from "react";
 import styled from "styled-components";
-import WidgetCardComponent from "@/components/widgetCard/widgetCard.component";
+import WidgetCardComponent from "@/components/widgetContainer/widgetContainer.component";
 
 const Main = styled.main`
     display: flex;

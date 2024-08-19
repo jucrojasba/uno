@@ -1,19 +1,21 @@
-"use client";
+'use client';
 import styled from "styled-components";
 import React from "react";
-import Link from 'next/link';
-import search_icon_light from '/public/assets/img/search-b.png'
-import toggle from '/public/assets/img/night.png'
+import StyledLink from "../UI/links/link.ui";
+import searchIcon from '/public/assets/img/search.png';
+import toggleIconDark from '/public/assets/img/dark.png';
+import toggleIconLight from '/public/assets/img/light.png';
 import Image from 'next/image';
+import ButtonTheme from "../UI/buttonTheme/buttonTheme.ui";
 import { Kaushan_Script } from 'next/font/google';
-import { GlobalTheme } from "@/app/GlobalStyling";
 
-
+// Fonts
 const kaushan = Kaushan_Script({
   subsets: ['latin'],
   weight: '400',
 });
 
+// Styled components
 const Title = styled.h1`
   font-family: ${kaushan.style.fontFamily};
   font-style: normal;
@@ -23,13 +25,14 @@ const Title = styled.h1`
 const NavbarContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding-left: 100px;
   padding-right: 100px;
-  gap: 50px
+  gap: 50px;
 `;
 
 const LogoContainer = styled.div`
+  padding-right: 40px;
   width: 100px;
   cursor: pointer;
 `;
@@ -41,12 +44,12 @@ const ToggleIconContainer = styled.div`
 const SearchBox = styled.div`
   display: flex;
   align-items: center;
-  background: ${GlobalTheme.colors.widgetsQuaternary};
+  background: ${({ theme }) => theme.pageColors.widgetsQuaternary};
   border-radius: 50px;
   padding: 15px;
   width: 250px;
   height: 20px;
-  color: ${GlobalTheme.colors.textTertiary}  
+  color: ${({ theme }) => theme.pageColors.textTertiary};
 `;
 
 const SearchInput = styled.input`
@@ -55,7 +58,7 @@ const SearchInput = styled.input`
   outline: 0;
   font-size: 20px;
   max-width: 200px;
-  color: ${GlobalTheme.colors.textTertiary};
+  color: ${({ theme }) => theme.pageColors.textTertiary};
 `;
 
 const NavList = styled.ul`
@@ -71,25 +74,25 @@ const NavItem = styled.li`
   cursor: pointer;
 `;
 
-const StyledLink =styled(Link)`
-  text-decoration:none;
-  padding: 15px;
-  border-radius: 15px;
-  color: ${GlobalTheme.colors.textTertiary};
-
-  &:hover{
-      font-weight: bold;
-      background-color: ${GlobalTheme.colors.widgetsQuaternary}
+// Navbar component
+export const Navbar: React.FC<{ onToggleTheme: () => void }> = ({ onToggleTheme }) => {
+  function ToggleTheme () {
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'light') {
+      return (
+        <ButtonTheme type="button" icon={
+          <Image src={toggleIconDark} alt="Toggle theme" style={{ width: 30, height: 30 }} />
+        } onClick={onToggleTheme} />
+      ) 
+    } else {
+      return (
+        <ButtonTheme type="button" icon={
+          <Image src={toggleIconLight} alt="Toggle theme" style={{ width: 30, height: 30 }} />
+        } onClick={onToggleTheme} />
+      )
     }
-`
-const Span = styled.span`
-    background-color: ${GlobalTheme.colors.widgetsQuaternary};
-    padding: 20px;
-    border-radius: 100%;
-    display: flex;
-`;
+  }
 
-export const Navbar = () => {
   return (
     <NavbarContainer>
       <LogoContainer>
@@ -97,23 +100,21 @@ export const Navbar = () => {
       </LogoContainer>
       <NavList>
         <NavItem>
-          <StyledLink href="/">Inicio</StyledLink>
+          <StyledLink href="/" label="Inicio" />
         </NavItem>
         <NavItem>
-          <StyledLink href="/products">Productos</StyledLink>
+          <StyledLink href="/products" label="Productos" />
         </NavItem>
         <NavItem>
-          <StyledLink href="/create-product">Crear</StyledLink>
+          <StyledLink href="/create-product" label="Crear" />
         </NavItem>
       </NavList>
       <SearchBox>
         <SearchInput type="text" placeholder="Search" />
-        <Image src={search_icon_light} alt="" style={{ width: 20, height: 20 }} />
+        <Image src={searchIcon} alt="Search icon" style={{ width: 20, height: 20 }} />
       </SearchBox>
       <ToggleIconContainer>
-        <Span>
-          <Image className="border" src={toggle} alt="" style={{ width: 30, height: 30 }} />
-        </Span>
+        {ToggleTheme()}
       </ToggleIconContainer>
     </NavbarContainer>
   );
