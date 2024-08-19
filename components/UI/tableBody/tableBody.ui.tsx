@@ -5,32 +5,28 @@ import { TableBodyProps } from "@/models/tableBody";
 import React, { useState, useEffect } from 'react';
 import { getProducts } from "@/utilities/get-products.utility"
 import { handleDelete } from "../deleteButton/buttonDelete.ui"
-import { GlobalTheme } from "@/app/GlobalStyling";
-
 import toggle from '@/public/assets/img/compartimiento.png'
 import { Span } from "@/components/UI/deleteButton/buttonDelete.ui";
 import StyledTagLink from "../links/tagsLink.ui";
 
-
 const Tbody = styled.tbody``;
 
 const Tr = styled.tr`
-  border: 1px solid ${GlobalTheme.pageColors.textTertiary};
+  border: 1px solid ${({ theme }) => theme.pageColors.textTertiary};
 `;
 
 const Td = styled.td`
   padding: 10px;
-  color: ${GlobalTheme.pageColors.textTertiary};
-  background: ${GlobalTheme.pageColors.widgetsQuaternary};
-  border-bottom: 3px solid ${GlobalTheme.pageColors.textPrimary};
+  color: ${({ theme }) => theme.pageColors.textTertiary};
+  background: ${({ theme }) => theme.pageColors.widgetsQuaternary};
+  border-bottom: 3px solid ${({ theme }) => theme.pageColors.textPrimary};
 
   & div{
     margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-
-  & div > *{
-    cursor: default;
-    margin-top: 10px;
 `;
 
 type HandleDeleteProduct = (id: number) => void;
@@ -71,7 +67,7 @@ const TableBody = ({ products }: TableBodyProps) => {
     return (
       <Tbody>
         <Tr>
-          <Td colSpan={6}>Error al cargar los productos</Td>
+          <Td colSpan={6}>Error al cargar los productos.</Td>
         </Tr>
       </Tbody>
     );
@@ -85,7 +81,7 @@ const TableBody = ({ products }: TableBodyProps) => {
             <Td>{product.id}</Td>
             <Td>{product.title}
               <div>
-                <StyledTagLink href="/" label={product.tag}></StyledTagLink>
+                <StyledTagLink href="#" label={product.tag}></StyledTagLink>
               </div></Td>
             <Td>{product.price}</Td>
             <Td>{product.description}</Td>
@@ -98,15 +94,17 @@ const TableBody = ({ products }: TableBodyProps) => {
               />
             </Td>
             <Td>
+              <div>
               <Span >
                 <Image src={toggle} alt="" style={{ width: 20, height: 20 }}onClick={() => handleDeleteProduct(product.id)} />
               </Span>
+              </div>
             </Td>
           </Tr>
         ))
       ) : (
         <Tr>
-          <Td colSpan={6}>No hay productos disponibles</Td>
+          <Td colSpan={6}>No hay productos disponibles.</Td>
         </Tr>
       )}
     </Tbody>

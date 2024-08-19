@@ -1,10 +1,8 @@
 'use client';
-
 import React from 'react';
 import styled from 'styled-components';
 import { Kaushan_Script } from 'next/font/google';
 import Form from '@/components/form/form.component';
-import { GlobalTheme } from '../GlobalStyling';
 
 const kaushan = Kaushan_Script({
   subsets: ['latin'],
@@ -30,10 +28,10 @@ const Container = styled.div`
   width: 720px;
   margin: 100px auto;
   padding: 50px;
-  background-color: ${GlobalTheme.pageColors.widgetsQuaternary};
-  color: ${GlobalTheme.pageColors.textTertiary};
+  background-color: ${({ theme }) => theme.pageColors.widgetsQuaternary};
+  color: ${({ theme }) => theme.pageColors.textTertiary};
   border-radius: 15px;
-  box-shadow: 0px 2px 4px ${GlobalTheme.pageColors.textQuaternary};
+  box-shadow: 0px 2px 4px ${({ theme }) => theme.pageColors.textQuaternary};
   box-sizing: border-box;
 `;
 

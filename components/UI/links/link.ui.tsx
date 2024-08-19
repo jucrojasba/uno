@@ -1,18 +1,17 @@
 import React from 'react'
 import { LinkProps } from '@/models/link.model';
 import Link from 'next/link';
-import { GlobalTheme } from "@/app/GlobalStyling";
 import styled from "styled-components"
 
 const LinkComponent =styled(Link)`
   text-decoration:none;
   padding: 15px;
   border-radius: 15px;
-  color: ${GlobalTheme.pageColors.textTertiary};
+  color: ${({ theme }) => theme.pageColors.textTertiary};
 
   &:hover{
       font-weight: bold;
-      background-color: ${GlobalTheme.pageColors.widgetsQuaternary}
+      background-color: ${({ theme }) => theme.pageColors.widgetsQuaternary}
     }
 `
 
