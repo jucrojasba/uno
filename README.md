@@ -1,4 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Welcome... to Market, Inc.
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [create-next-app](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+---------------------------------
+
+Checkout our resources for more information and awesome details avout the making of this project:
+
+- [Project Presentation Video] https://www.loom.com/share/e3f4c1667de84d1eb2666ae719c238bb?sid=2cf9fbcd-3b24-42bb-bfbd-13389f04031b
+
+- [Project Mockup! Made in Figma] https://www.figma.com/design/9AyfjZ8ib3yFEaCAYx08Sh/oneTeam.ts?node-id=0-1&t=ttqqKDDPL8IkKyUm-1
+
+- [Project Repository] https://github.com/jucrojasba/uno.git
+
+Just clone it by running the following command:
+
+```bash
+git clone https://github.com/jucrojasba/uno.git
+```
 
 ## Getting Started
 
