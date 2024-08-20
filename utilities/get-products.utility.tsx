@@ -1,5 +1,5 @@
 import { Product } from "@/models/product.model";
 
-export function getProducts(): Product[] { 
+export async function getProducts(): Promise<Product[]> { 
     const products = localStorage.getItem('products'); return products ? JSON.parse(products) : []; 
 } 

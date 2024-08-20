@@ -1,14 +1,13 @@
 import React from 'react'
 import { ButtonFormProps } from '@/models/buttonForm.model';
-import { GlobalTheme } from '@/app/GlobalStyling';
 import styled from 'styled-components';
 
 const ButtonCreateStyle = styled.button`
-  width: 100%;
+  width: 150px;
   padding: 10px;
   margin-top: 10px;
-  background-color: ${GlobalTheme.pageColors.bgTertiary};
-  color: ${GlobalTheme.pageColors.textPrimary};
+  background-color: ${({ theme }) => theme.pageColors.bgTertiary};
+  color: ${({ theme }) => theme.pageColors.textPrimary};
   border: none;
   border-radius: 10px;
   cursor: pointer;

@@ -9,30 +9,36 @@ import { setProduct } from "@/utilities/set-product.utility"
 import { Product } from "@/models/product.model"
 import Swal from "sweetalert2"
 
-
 const ColspanInputs = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
-
+    gap: 50px;
+    
     div {
         display: flex;
         flex-direction: column;
+        align-items: center;
         width: 100%;
 
         label {
+            align-self: start;
             margin-bottom: 10px;
         }
     }
-}
+
     `
 
 const FormContainer = styled.form`
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
+
+    label {
+            align-self: start;
+        }
 `
 
 function Form() {

@@ -5,7 +5,8 @@ import { Product } from "@/models/product.model";
 import { getProducts } from "@/utilities/get-products.utility";
 import { useEffect, useState } from "react";
 import { TableHead } from "../UI/tableHead/tableHead.ui";
-import { TableBody } from "../UI/tableBody/tableBody.ui";
+import { TableBody }  from "../UI/tableBody/tableBody.ui";
+
 const Main = styled.main`
   display: flex;
   flex-direction: column;
@@ -25,12 +26,14 @@ export default function TableComponent() {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    const productsList = getProducts();
-    if (productsList) {
-      setProducts(productsList);
-    }
-  }, []);
+    // Create an async function to handle the async call
+    const fetchProducts = async () => {
+      const productsList = await getProducts(); // Wait for the promise to resolve
+      setProducts(productsList); // Update the state with the resolved value
+    };
 
+    fetchProducts(); // Call the async function
+  }, [])
   const columns = ["ID", "NOMBRE", "PRECIO", "DESCRIPCIÓN", "IMG","FUNCIONES"];
 
   return (

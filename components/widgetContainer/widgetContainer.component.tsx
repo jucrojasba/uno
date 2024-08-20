@@ -1,6 +1,5 @@
 "use client";
 import styled from "styled-components";
-import { GlobalTheme } from "@/app/GlobalStyling";
 import WidgetCards from '../UI/widgetCard/widgetCard.ui';
 import { WidgetCardProps } from "@/models/widgetCard";
 
@@ -10,7 +9,7 @@ const Section = styled.section`
     padding: 50px;
     border-radius: 5px;
     display: flex;
-    gap: 50px
+    gap: 60px
 `
 
 //----------------------------- Instantiation for Home View -----------------------------
