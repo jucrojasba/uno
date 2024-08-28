@@ -98,7 +98,7 @@ export const Navbar: React.FC<{ onToggleTheme: () => void }> = ({ onToggleTheme 
     // Default 'returned value' if localStorage is not available
     return (
       <ButtonTheme type="button" icon={
-        <Image src={toggleIconLight} alt="Toggle theme" style={{ width: 30, height: 30 }} />
+        <Image src={toggleIconDark} alt="Toggle theme" style={{ width: 30, height: 30 }} />
       } onClick={onToggleTheme} />
     );
   }
