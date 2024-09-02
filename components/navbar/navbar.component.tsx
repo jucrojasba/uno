@@ -77,20 +77,30 @@ const NavItem = styled.li`
 // Navbar component
 export const Navbar: React.FC<{ onToggleTheme: () => void }> = ({ onToggleTheme }) => {
   function ToggleTheme () {
-    const currentTheme = localStorage.getItem('theme');
-    if (currentTheme === 'light') {
-      return (
-        <ButtonTheme type="button" icon={
-          <Image src={toggleIconDark} alt="Toggle theme" style={{ width: 30, height: 30 }} />
-        } onClick={onToggleTheme} />
-      ) 
-    } else {
-      return (
-        <ButtonTheme type="button" icon={
-          <Image src={toggleIconLight} alt="Toggle theme" style={{ width: 30, height: 30 }} />
-        } onClick={onToggleTheme} />
-      )
+    // Here, we make sure that the localStorage is available
+    if (typeof window !== 'undefined' && window.localStorage) {
+      const currentTheme = localStorage.getItem('theme');
+      if (currentTheme === 'light') {
+        return (
+          <ButtonTheme type="button" icon={
+            <Image src={toggleIconDark} alt="Toggle theme" style={{ width: 30, height: 30 }} />
+          } onClick={onToggleTheme} />
+        ) 
+      } else {
+        return (
+          <ButtonTheme type="button" icon={
+            <Image src={toggleIconLight} alt="Toggle theme" style={{ width: 30, height: 30 }} />
+          } onClick={onToggleTheme} />
+        )
+      }
     }
+
+    // Default 'returned value' if localStorage is not available
+    return (
+      <ButtonTheme type="button" icon={
+        <Image src={toggleIconDark} alt="Toggle theme" style={{ width: 30, height: 30 }} />
+      } onClick={onToggleTheme} />
+    );
   }
 
   return (
